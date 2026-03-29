@@ -193,33 +193,33 @@
 # 	print('Nesta forma de pagamento entra 30% de juros no valor!')
 
 
-print('-=' * 34)
-print('Vamos calcular o valor do produto de acordo com a forma de pagamento!')
-print('-=' * 34)
-preco_normal = float(input('Digite o valor do produto: R$'))
-print('-=' * 34)
-print('Escolha a forma de pagamento: \n[1] DINHEIRO \n[2] CHEQUE \n[3] CARTÃO')
-print('-=' * 34)
-forma_pagamento = str(input('Opção Desejada: ')).strip()
-if forma_pagamento != '1' and forma_pagamento != '2' and forma_pagamento !='3':
-    print('Forma de pagamento invalida!')
-if forma_pagamento == '3':
-	parcelas = str(input('Digite o numero de parcelas de 1x até 3x: ')).strip()
-	if parcelas != '1' and parcelas != '2' and  parcelas != '3':
-		print('Quantidade de parcelas invalida!')
-if forma_pagamento == '1' or forma_pagamento == '2':
-	preco_novo = preco_normal - preco_normal * 0.10
-	print(f'O valor do produto com desconto de 10% para pagamentos em DINHEIRO ou CHEQUE ficou de: R${preco_novo}')
-elif forma_pagamento == '3' and parcelas == '1':
-	preco_novo = preco_normal - preco_normal * 0.05
-	print(f'O valor do produto com desconto de 5% para pagamento a VISTA no CARTÃO ficou de: R${preco_novo}')
-elif forma_pagamento == '3' and parcelas == '2':
-	print(f'O valor do produto parcelado em 2X NO CARTÃO fica de: R${preco_normal}')
-	print('Nesta forma de pagamento não tem desconto!')
-elif forma_pagamento == '3' and parcelas == '3':
-	preco_novo = preco_normal + preco_normal * 0.30
-	print(f'O valor do produto parcelado em 3X NO CARTÃO fica de: R${preco_novo}')
-	print('Nesta forma de pagamento entra 30% de juros no valor!')
+# print('-=' * 34)
+# print('Vamos calcular o valor do produto de acordo com a forma de pagamento!')
+# print('-=' * 34)
+# preco_normal = float(input('Digite o valor do produto: R$'))
+# print('-=' * 34)
+# print('Escolha a forma de pagamento: \n[1] DINHEIRO \n[2] CHEQUE \n[3] CARTÃO')
+# print('-=' * 34)
+# forma_pagamento = str(input('Opção Desejada: ')).strip()
+# if forma_pagamento != '1' and forma_pagamento != '2' and forma_pagamento !='3':
+#     print('Forma de pagamento invalida!')
+# if forma_pagamento == '3':
+# 	parcelas = str(input('Digite o numero de parcelas de 1x até 3x: ')).strip()
+# 	if parcelas != '1' and parcelas != '2' and  parcelas != '3':
+# 		print('Quantidade de parcelas invalida!')
+# if forma_pagamento == '1' or forma_pagamento == '2':
+# 	preco_novo = preco_normal - preco_normal * 0.10
+# 	print(f'O valor do produto com desconto de 10% para pagamentos em DINHEIRO ou CHEQUE ficou de: R${preco_novo}')
+# elif forma_pagamento == '3' and parcelas == '1':
+# 	preco_novo = preco_normal - preco_normal * 0.05
+# 	print(f'O valor do produto com desconto de 5% para pagamento a VISTA no CARTÃO ficou de: R${preco_novo}')
+# elif forma_pagamento == '3' and parcelas == '2':
+# 	print(f'O valor do produto parcelado em 2X NO CARTÃO fica de: R${preco_normal}')
+# 	print('Nesta forma de pagamento não tem desconto!')
+# elif forma_pagamento == '3' and parcelas == '3':
+# 	preco_novo = preco_normal + preco_normal * 0.30
+# 	print(f'O valor do produto parcelado em 3X NO CARTÃO fica de: R${preco_novo}')
+# 	print('Nesta forma de pagamento entra 30% de juros no valor!')
 
 
 # Exercicio 45 - Aula 12
@@ -235,8 +235,56 @@ elif forma_pagamento == '3' and parcelas == '3':
 # check = jogada_user in lista
 # if check == False:
 # 	print('A jogada escolhida é invalida')
-# # if jogada_user != 'PEDRA' and jogada_user != 'PAPEL' and jogada_user != 'TESOURA':
-# # 	print('A jogada escolhida é invalida')
+# jogada_pc = choice(lista)
+# msg = f'Voce escolheu {jogada_user} e eu escolhi {jogada_pc}.'
+# if jogada_user == jogada_pc:
+# 	print('Deu EMPATE')
+# 	print(f'Voce escolheu {jogada_user} e eu escolhi {jogada_pc}.')
+# if jogada_user == 'PEDRA':
+# 	if jogada_pc == 'TESOURA':
+# 		print('VOCE VENCEU')
+# 		print(msg)
+# 		print('Pedra quebra tesoura!')
+# 	elif jogada_pc == 'PAPEL':
+# 		print('VOCE PERDEU')
+# 		print(msg)
+# 		print('Papel enrola pedra!')
+# elif jogada_user == 'PAPEL':
+# 	if jogada_pc == 'TESOURA':
+# 		print('VOCE PERDEU')
+# 		print(msg)
+# 		print('Tesoura corta papel!')
+# 	elif jogada_pc == 'PEDRA':
+# 		print('VOCE VENCEU')
+# 		print(msg)
+# 		print('Papel enrola pedra!')
+# elif jogada_user == 'TESOURA':
+# 	if jogada_pc == 'PEDRA':
+# 		print('VOCE PERDEU')
+# 		print(msg)
+# 		print('Pedra quebra tesoura!')
+# 	elif jogada_pc == 'PAPEL':
+# 		print('VOCE VENCEU')
+# 		print(msg)
+# 		print('Tesoura corta papel!')
+
+
+
+
+
+
+# from random import choice
+# from time import sleep
+# print('-=' * 50)
+# print('Vamos jogar pedra, papel ou tesoura!')
+# print('-=' * 50)
+# jogada_user = str(input('Digite sua jogada: ')).strip().upper()
+# lista = ('PEDRA', 'PAPEL', 'TESOURA')
+# print('PROCESSANDO .....')
+# sleep(2)
+# check = jogada_user in lista
+# if check == False:
+# 	print('A jogada escolhida é invalida')
 # jogada_pc = choice(lista)
 # if jogada_user == jogada_pc:
 # 	print('Deu EMPATE')

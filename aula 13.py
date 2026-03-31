@@ -66,11 +66,11 @@
 # print('Digite o 1º Termo e a Razão de uma PA \npara verificar seus 10 primeiros termos')
 # termo1 = int(input('Digite o valor do primeiro termo: '))
 # razao = int(input('Digite o valor da Razão: '))
-# print(termo1)
+# print(termo1, end='-> ')
 # for pa in range(1, 10):
 #     termo1 += razao
-#     print(termo1)
-
+#     print(termo1, end='-> ')
+# print('ACABOU')
 
 # #Exercicio 52 - Aula 13
 # print('-='*20)
@@ -88,6 +88,15 @@
 # O número 1 possui apenas um divisor 
 # (ele mesmo), falhando nessa regra.''')
 # else:
+#     print('-='*20)
+#     print('Os numeros por qual ele divide são: ')
+#     for c in range(1, numint + 1):
+#         if numint % c == 0:
+#             print('\033[34m', end=' ')
+#         else:
+#             print('\033[m', end=' ')
+#         print(f'{c}', end=' ')
+#     print('\033[m')
 #     for verifica in range(2, numint):
 #         if numint % verifica == 0:
 #             check = 'false'
@@ -95,6 +104,40 @@
 #         print('O numero não é primo')
 #     else:
 #         print('O numero é primo')
+
+
+
+# print('-='*20)
+# print('Vamos verificar se um numero é primo: ')
+# print('-='*20)
+# num = input('Digite o Numero que deseja verificar: ').strip()
+# numint = int(num)
+# tot = 0
+# print('-='*20)
+# if numint == 1:
+#     print('''\033[34mO número 1 não é primo porque 
+# a definição de número primo exige 
+# que ele tenha exatamente dois divisores 
+# distintos: o número 1 e ele mesmo. 
+# O número 1 possui apenas um divisor 
+# (ele mesmo), falhando nessa regra.''')
+#     print('\033[m')
+# else:
+#     print('Os numeros por qual ele divide são: ')
+#     for c in range(1, numint + 1):
+#         if numint % c == 0:
+#             print('\033[34m', end=' ')
+#             tot += 1
+#         else:
+#             print('\033[m', end=' ')
+#         print(f'{c}', end=' ')
+#     print('\033[m')
+#     print('-='*20)
+#     print(f'O numero {numint} foi divisivel {tot} vezes!')   
+#     if tot == 2:
+#         print('O numero é primo')
+#     else:
+#         print('O numero não é primo')
 
 
 # #Exercicio 53 - Aula 13
@@ -129,8 +172,8 @@
 # maiores = 0
 # menores = 0
 # data = date.today().year
-# for loop in range(7):
-#     nasc = input('Digite o ano de nascimento: ')
+# for loop in range(1, 8):
+#     nasc = input(f'Digite o ano de nascimento da {loop}ª pessoa: ').strip()
 #     idade = int(data) - int(nasc)
 #     if idade < 18:
 #         menores += 1
@@ -143,8 +186,8 @@
 # #Exercicio 55 - Aula 13
 # maior = float(0)
 # menor = float(0)
-# for pessoas in range(5):
-#     peso = float(input('Digite o peso da pessoa: '))
+# for pessoas in range(1, 6):
+#     peso = float(input(f'Digite o peso da {pessoas}ª pessoa: ').strip())
 #     if menor == 0:
 #         menor = peso
 #     elif peso > maior:
@@ -165,23 +208,22 @@
 # velho_idade = 0
 # velho_nome = ''
 # mulheres_20 = 0
-# for pessoas in range(4):
-#     nome = str(input('Digite o nome da pessoa: ')).strip().upper()
-#     idade = int(input('Digite a idade da pessoa: '))
-#     print('ESCOLHA O GENERO DA PESSOA: \n[1] MASCULINO \n[2] FEMININO')
-#     sexo = int(input('Opção escolhida: '))
+# for pessoas in range(1, 5):
+#     nome = str(input(f'Digite o nome da {pessoas}ª pessoa: ')).strip().upper()
+#     idade = int(input('Digite a idade da pessoa: ').strip())
+#     sexo = str(input('Sexo [M/F]: ')).strip().upper()
 #     idade_total += idade
-#     if sexo == 1 and velho_idade == 0:
+#     if sexo == 'M' and velho_idade == 0:
 #         velho_idade = idade
 #         velho_nome = nome
-#     elif sexo == 1 and velho_idade < idade:
+#     elif sexo == 'M' and velho_idade < idade:
 #         velho_idade = idade
 #         velho_nome = nome
-#     elif sexo == 2 and idade < 20:
+#     elif sexo == 'F' and idade < 20:
 #         mulheres_20 += 1
 #     print('-='*30)
 # print(f'A media de idade desse grupo de pessoas é de {idade_total / 4}')
 # print(f'O nome do homem mais velho do grupo é {velho_nome} e ele tem {velho_idade} anos')
-# print(f'A quantidade de mulheres com menos de 20 anos é de {mulheres_20}')
+# print(f'A quantidade de mulheres com menos de 20 anos é de {mulheres_20} pessoa.')
 # print('-='*30)
         

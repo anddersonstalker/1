@@ -16,20 +16,26 @@
 # tentativas = 1
 # player = int(input('Escolha um numero: ').strip())
 # while player < 0 or player > 10:
-#     player = int(input('Valor digitado invalidao, digite novamente: '))
+#     player = int(input('Valor digitado invalidao, digite novamente: ').strip())
 # while player != pc:
 #     tentativas += 1
-#     player = int(input('Voce errou, tente novamente: ').strip())
-#     while player < 0 or player > 10:
-#         player = int(input('Valor digitado invalidao, digite novamente: ').strip())
+#     if player < pc:
+#         player = int(input('Voce errou o numero que pensei é Maior, tente novamente: ').strip())
+#         while player < 0 or player > 10:
+#             player = int(input('Valor digitado invalidao, digite novamente: ').strip())
+#     elif player > pc:
+#         player = int(input('Voce errou o numero que pensei é Menor, tente novamente: ').strip())
+#         while player < 0 or player > 10:
+#             player = int(input('Valor digitado invalidao, digite novamente: ').strip())
 # print(f'Voce acertou, o numero que escolhi foi {pc}, e voce precisou de {tentativas} tentativas validas para adivinhar.')
 
 
 # # Exercicio 59 - Aula 14
+# from time import sleep
 # n1 = int(input('Digite o primeiro valor: ').strip())
 # n2 = int(input('Digite o segundo valor valor: ').strip())
 # menu = '0'
-# while menu == '0':
+# while menu != '5':
 #     print('''ESCOLHA O QUE DESEJA FAZER COM ESSES NUMEROS:
 # [1] SOMAR
 # [2] MULTIPLICAR
@@ -41,54 +47,45 @@
 #         menu = str(input('Opçao selecionada invalida, tente novamente: ').strip())
 #     if menu == '1':
 #         print(f'A soma de {n1} + {n2} é: {n1 + n2} ')
+#         print(f'=-'*20)
 #     elif menu == '2':
 #         print(f'A multiplicaçao de {n1} por {n2} é: {n1 * n2} ')
+#         print(f'=-'*20)
 #     elif menu == '3' and n1 > n2:
 #         print(f'O primeiro numero é o maior: {n1}')
+#         print(f'=-'*20)
 #     elif menu == '3' and n2 > n1:
 #         print(f'O segundo numero é o maior: {n2}')
+#         print(f'=-'*20)
 #     elif menu == '4':
 #         n1 = int(input('Digite o primeiro valor: ').strip())
 #         n2 = int(input('Digite o segundo valor valor: ').strip())
-#         menu = '0'
+#         print(f'=-'*20)
+#     sleep(1)
+
 
 
 # # Exercicio 60 - Aula 14
 # n = int(input('Digite um numero para verificar o seu fatorial: ').strip())
-# f = n - 1
-# a = 0
-# print(f'{n}!={n}', end='x')
-# while f != 0:
-#     if f == n - 1:
-#         a = f * n
-#         print(f, end='x')
-#         f -= 1
-#     elif f == 1:
-#         a = f * a 
-#         print(f, end='')
-#         f -= 1
-#     else:
-#         a = f * a 
-#         print(f, end='x')
-#         f -= 1
-# print(f'={a}')
+# f = n
+# a = 1
+# print(f'{n}!=', end=' ')
+# while f > 0:
+#     print(f'{f}', end=' ')
+#     print('x' if f > 1 else '=', end=' ')
+#     a *= f
+#     f -= 1
+# print(f'{a}')
 
 
 # n = int(input('Digite um numero para verificar o seu fatorial: ').strip())
-# f = n - 1
-# a = 0
-# print(f'{n}!={n}', end='x')
-# for c in range(n - 1, 0, -1):
-#     if c == n - 1:
-#         a = c * n
-#         print(c, end='x')
-#     elif c == 1:
-#         a = c * a 
-#         print(c, end='')
-#     else:
-#         a = c * a 
-#         print(c, end='x')
-# print(f'={a}')
+# a = 1
+# print(f'{n}!=', end=' ')
+# for c in range(n, 0, -1):
+#     print(f'{c}', end=' ')
+#     print('x' if c > 1 else '=', end=' ')
+#     a *= c
+# print(f'{a}')
 
 
 # # Exercicio 61 - Aula 14
@@ -113,19 +110,15 @@
 # termo1 = int(input('Digite o primeiro termo da PA: '))
 # razão = int(input('Digite a razão da PA: '))
 # a = termo1
-# contador = 9
+# contador = 10
 # opção = 'S'
-# print(f'Os 10 primeiros digitos dessa PA é: {termo1}', end='-> ')
+# print(f'Os 10 primeiros digitos dessa PA é:', end=' ')
 # while opção == 'S':
-#     while contador != 0:
-#         if contador == 1:
-#             a += razão
-#             contador -= 1
-#             print(a, end='')
-#         else:
-#             a += razão
-#             contador -= 1
-#             print(a, end='-> ')
+#     while contador > 0:
+#         print(f'{a}', end=' ')
+#         print('->' if contador > 1 else '-> PAUSA', end=' ')
+#         a += razão
+#         contador -= 1
 #     if contador == 0:
 #         print('\nDeseja verificar mais digitos da PA? \n[S] Sim \n[N] Não')
 #         opção = input('Opção desejada: ').upper().strip()
@@ -145,9 +138,8 @@
 #       limite = int(input("Por favor, digite um número inteiro positivo maior que zero: "))
 # while contador < limite:
 #         print(anterior, end=' ')
-#         prov = anterior
 #         proximo += anterior
-#         anterior = proximo - prov
+#         anterior = proximo - anterior
 #         contador += 1
 
 
@@ -165,18 +157,14 @@
 
 
 # # Exercicio 65 - Aula 14
-# a = 0
-# c = 0
-# menor = 0
-# maior = 0
+# a = c = menor = maior = 0
 # opcao = 'S'
 # while opcao == 'S':
 #     n = int(input('Digite um numero para adcionar ao grupo: ').strip())
 #     a += n
 #     c += 1
 #     if c == 1:
-#         menor = n
-#         maior = n
+#         menor = maior = n
 #     elif n > maior:
 #         maior = n
 #     elif menor > n:
@@ -187,6 +175,6 @@
 #     print('-='*20) 
 # print(f'''Voce adcionou {c} numeros ao grupo.
 # A soma desses numeros é: {a}
-# A media desse grupo de numeros é: {a / c}
+# A media desse grupo de numeros é: {(a / c):.2f}
 # O menor numero é: {menor}
 # O Maior numero é: {maior}''')

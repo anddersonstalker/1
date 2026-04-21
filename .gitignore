@@ -1,0 +1,13 @@
+# Ambientes Virtuais (indispensável)
+.venv/
+venv/
+env/
+
+# Pastas de cache do Python
+__pycache__/
+*.py[cod]
+
+# Arquivos de sistema ou IDE
+.vscode/
+.DS_Store
+Thumbs.db

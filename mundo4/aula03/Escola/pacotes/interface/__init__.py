@@ -9,7 +9,7 @@ def titulo(msg):
 
 
 def menu(lista):
-    from pacotes.dados import verifica_int
+    from mundo4.aula03.Escola.pacotes.dados import verifica_int
 
     titulo('MENU DO SISTEMA')
     for pos, c in enumerate(lista):

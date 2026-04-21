@@ -1,5 +1,5 @@
-from pacotes.interface import *
-from pacotes.dados import *
+from mundo4.aula03.Escola.pacotes.interface import *
+from mundo4.aula03.Escola.pacotes.dados import *
 
 
 arq = 'dados_alunos.txt'
